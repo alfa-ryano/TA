@@ -2,6 +2,7 @@
 %\linespread{1.5}
 %\usepackage{lineno}
 %\linenumbers
+
 \usepackage{lscape}
 \usepackage{enumitem}
 \setlist[enumerate]{label*=\arabic*.}
@@ -155,7 +156,7 @@ Nevertheless, change-based persistence also comes with downsides, such as ever-g
 
 \section{Research Questions}
 \label{sec:research_questions}
-The hypothesis of this work is that \textbf{``Change-based persistence reduces the execution time of model change-detection, model comparison, and model merging for large models compared to their execution time in state-based persistence, with acceptable trade-offs on loading and persisting time, memory footprint, and storage space consumption''}. The execution time is the time required to complete the processes (e.g. change-detection, model comparison, model merging, or persisting changes). Model change-detection is identifying changed elements of a model compared to its previous version/ancestor while the model comparison is finding the differences between two models that come from the same ancestor. Model merging is reconciling two models that come from the same ancestor and combining them to produce a new model. Using the term ``large models'' we refer to models with more than 1M elements, consistently with \cite{daniel2016neoemf,DBLP:conf/models/Espinazo-PaganCM11}. Model load time is the amount of time required to load a model into memory. Persisting changes is saving changes made to a model into a persistent representation (e.g. a file). Memory footprints are the sizes of memory used to execute the processes. Disk space consumption is the amount of storage consumed by the persistence.
+The hypothesis of this work is that \textbf{``Change-based persistence reduces the execution time of model change-detection, model comparison, and model merging for large models compared to their execution time in state-based persistence, with acceptable trade-offs on loading and persisting time, memory footprint, and storage space consumption''}. The execution time is the time required to complete the processes (e.g. change-detection, model comparison, model merging, or persisting changes). Model change-detection is identifying changed elements of a model compared to its previous version/ancestor while the model comparison is finding the differences between two models that come from the same ancestor. Model merging is reconciling two models that come from the same ancestor and combining them to produce a new model. Using the term ``large models'' we refer to models with more than 1M elements, consistently with \cite{daniel2016neoemf,DBLP:conf/models/Espinazo-PaganCM11}. Model load time is the amount of time required to load a model into memory. Persisting changes is saving changes made to a model into a persistent representation (e.g. a file). Memory footprints are the sizes of memory used to execute the processes. Disk space consumption is the amount of storage consumed by the persistence. The term ``acceptable'' means the cost for memory extension is significantly lower than the cost for extending processor to reach the same execution time, and the loading and persisting time should be faster or slightly slower than the state-based approach.\\
 
 To assess the validity of the hypothesis, this work aims to answer the following research questions: 
 \begin{enumerate} 
@@ -226,7 +227,7 @@ This chapter is dedicated to summarise work related to change-based persistence 
 This chapter is planned to present the concept of change-based model persistence and its core implementation. The chapter will comprise the concept of change-based model persistence, and the design of the core implementation. The implementation is evaluated by comparing the eventual model produced by replaying a change-based representation to the same model but loaded from a state-based persistence (e.g. XMI). These contents have been published in a workshop \cite{DBLP:conf/models/YohannisKP17}.
 
 
-\section{Chapter 4: Optimised Loading of Change-based Model Persistence}
+\section{Chapter 4: Optimised Loading of Change-based Models}
 \label{sec:chapter_4_optimised_loading_change_based_model_persistence}
 
 Change-based persistence comes with a downside of ever-growing file sizes \cite{DBLP:journals/entcs/RobbesL07,DBLP:conf/edoc/KoegelHLHD10} which causes increased loading time \cite{mens2002state}. Reducing the loading time is essential to facilitate the practical adoption of change-based persistence. One way to reduce the increased loading time is by ignoring -- not replaying -- changes that are cancelled out by subsequent changes. 
@@ -485,7 +486,7 @@ Three papers have been written. The first paper \cite{DBLP:conf/models/YohannisK
 \end{enumerate}
 
 
-\bibliographystyle{IEEEtran}
+\bibliographystyle{abbrv}
 \bibliography{references}
 
 %\begin{appendices}
